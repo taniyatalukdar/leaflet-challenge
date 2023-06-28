@@ -76,12 +76,18 @@ d3.json(url).then((data) => {
         let colors = ["#ea2c2c", "#ea822c", "#ffff00", "#ffa500", "#ff4500", "#98ee00"];
 
         // div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
+        // for (var i = 0; i < depth.length; i++) {
+        //     div.innerHTML +=
+        //         "<i style='background: " + colors[i] + "'></i> " +
+        //         depth[i] + (depth[i + 1] ? "&ndash;" + depth[i + 1] + "<br>" : "+");
+        // }
         for (var i = 0; i < depth.length; i++) {
             div.innerHTML +=
-                "<i style='background: " + colors[i] + "'></i> " +
+                "<i style='background: " + colors[i] + "; display: inline-block; width: 10px; height: 10px;'></i> " +
                 depth[i] + (depth[i + 1] ? "&ndash;" + depth[i + 1] + "<br>" : "+");
         }
         return div;
     };
     legend.addTo(map);
 });
+
