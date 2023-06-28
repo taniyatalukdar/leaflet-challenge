@@ -7,4 +7,3 @@ The USGS is interested in building a new set of tools that will allow them to vi
 Create the Earthquake Visualization
 
 ![alt_text] (Images/2-BasicMap.png)
-![alt text](Images/Screenshot%202023-06-26%20at%208.32.36%20PM.png)
