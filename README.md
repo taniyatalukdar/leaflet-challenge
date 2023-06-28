@@ -5,4 +5,5 @@ The USGS is interested in building a new set of tools that will allow them to vi
 
 ## Instructions
 Create the Earthquake Visualization
+
 ![basic map] (https://github.com/taniyatalukdar/leaflet-challenge/blob/main/Images/2-BasicMap.png)
