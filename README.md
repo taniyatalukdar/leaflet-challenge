@@ -6,4 +6,4 @@ The USGS is interested in building a new set of tools that will allow them to vi
 ## Instructions
 Create the Earthquake Visualization
 
-![alt_text] (Images/2-BasicMap.png)
+![alt text] (Images/2-BasicMap.png)
