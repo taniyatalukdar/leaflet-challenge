@@ -7,3 +7,9 @@ The USGS is interested in building a new set of tools that will allow them to vi
 Create the Earthquake Visualization
 
 ![alt text](Images/2-BasicMap.png)
+
+Your first task is to visualize an earthquake dataset. Complete the following steps:
+
+1. Get your dataset. To do so, follow these steps:
+
+      - The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the USGS GeoJSON FeedLinks to an external site. page and choose a dataset to visualize. The following image is an example screenshot of what appears when you visit this link:
