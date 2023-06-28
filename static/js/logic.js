@@ -22,7 +22,7 @@ d3.json(url).then((data) => {
 
     function styleInfo(x) {
         return {
-            color: "black",
+            color: "grey",
             radius: radiusMag(x.properties.mag),
             fillOpacity: 1,
             fillColor: fillColorDepth(x.geometry.coordinates[2])
@@ -40,57 +40,48 @@ d3.json(url).then((data) => {
         switch (true) {
             case (params > 90):
                 return "#ea2c2c";
-            case (params > 70): 
+            case (params > 70):
                 return "#ea822c";
             case (params > 50):
-                return "yellow";
+                return "#ffff00";
             case (params > 30):
-                return "orange";
+                return "#ffa500";
             case (params > 10):
-                return "orangered";
+                return "#ff4500";
 
             default:
                 return "#98ee00";
 
         }
-    
+
     }
-
-
-
-
-
-
-
-
-
 
     L.geoJson(data, {
         pointToLayer: function (feature, latlon) {
             return L.circleMarker(latlon);
         },
-        style: styleInfo
+        style: styleInfo,
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(
+                "<h2>Magnitude: " + feature.properties.mag + "<br><h2>Location: " + feature.properties.place + "<br><h2>Depth: " + feature.geometry.coordinates[2]
+            );
+
+        }
     }).addTo(map);
 
+    let legend = L.control({ position: "bottomright" });
+    legend.onAdd = function () {
+        var div = L.DomUtil.create("div", "info legend");
+        let depth = [-10, 10, 30, 50, 70, 90];
+        let colors = ["#ea2c2c", "#ea822c", "#ffff00", "#ffa500", "#ff4500", "#98ee00"];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
+        for (var i = 0; i < depth.length; i++) {
+            div.innerHTML +=
+                "<i style='background: " + colors[i] + "'></i> " +
+                depth[i] + (depth[i + 1] ? "&ndash;" + depth[i + 1] + "<br>" : "+");
+        }
+        return div;
+    };
+    legend.addTo(map);
 });
